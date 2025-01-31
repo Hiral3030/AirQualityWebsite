@@ -1,5 +1,5 @@
 const channelID = "2797593";
-const readAPIKey = "YOUR_READ_API_KEY"; // Replace with your Read API Key
+const readAPIKey = "XATE2MSVT2QHSPQ6"; // Replace with your Read API Key
 const url = `https://api.thingspeak.com/channels/${channelID}/feeds.json?api_key=${readAPIKey}&results=10`;
 
 async function fetchData() {
