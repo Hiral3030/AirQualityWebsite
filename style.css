@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 0;
+    font-size: 24px;
+}
+
+.data-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.data-box {
+    width: 250px;
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.data-box:hover {
+    transform: scale(1.05);
+}
+
+/* Assign colors for different readings */
+.temperature { background: #FF5733; }
+.humidity { background: #3498DB; }
+.co { background: #2C3E50; }
+.aqi { background: #8E44AD; }
+.nox { background: #E67E22; }
+
+.chart-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    padding: 20px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
