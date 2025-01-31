@@ -6,7 +6,6 @@
     <title>Air Quality Monitoring</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
 </head>
 <body>
     <header>
@@ -14,10 +13,14 @@
     </header>
     
     <main>
-        <section class="data-container">
+        <div class="data-container">
             <div class="data-box temperature">
                 <h2>🌡️ Temperature (°C)</h2>
                 <p id="temperature">Loading...</p>
+            </div>
+            <div class="data-box aqi">
+                <h2>📊 Air Quality Index (AQI)</h2>
+                <p id="aqi">Loading...</p>
             </div>
             <div class="data-box humidity">
                 <h2>💧 Humidity (%)</h2>
@@ -27,40 +30,22 @@
                 <h2>☠️ Carbon Monoxide (CO) PPM</h2>
                 <p id="co">Loading...</p>
             </div>
-            <div class="data-box aqi">
-                <h2>📊 Air Quality Index (AQI)</h2>
-                <p id="aqi">Loading...</p>
-            </div>
             <div class="data-box nox">
                 <h2>🚗 Nitrogen Oxides (NOx) PPM</h2>
                 <p id="nox">Loading...</p>
             </div>
-        </section>
+        </div>
         
-        <section class="chart-container">
+        <div class="chart-container">
             <h2>📈 Data Trends</h2>
             <canvas id="data-chart"></canvas>
-        </section>
-        
-        <section class="qr-container">
-            <h2>📱 Scan to View on Mobile</h2>
-            <canvas id="qr-code"></canvas>
-        </section>
+        </div>
     </main>
     
     <footer>
         <button id="download-btn">📥 Download Data (CSV)</button>
     </footer>
     
-    <script>
-        window.onload = function() {
-            var qr = new QRious({
-                element: document.getElementById("qr-code"),
-                value: "https://hiral3030.github.io/AirQualityWebsite/",
-                size: 150
-            });
-        };
-    </script>
     <script src="script.js"></script>
 </body>
 </html>
