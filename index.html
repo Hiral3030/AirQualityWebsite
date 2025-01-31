@@ -4,70 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Air Quality Monitoring</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-        h1 {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 0;
-        }
-        .data-box {
-            margin: 20px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            display: inline-block;
-            width: 200px;
-            background: #f9f9f9;
-            border-radius: 8px;
-        }
-        .data-box h2 {
-            margin: 5px 0;
-            color: #333;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <h1>Air Quality Monitoring System</h1>
-    <div class="data-box">
-        <h2>Temperature</h2>
-        <p id="temperature">Loading...</p>
+    <div class="data-container">
+        <div class="data-box">
+            <h2>Temperature (°C)</h2>
+            <p id="temperature">Loading...</p>
+        </div>
+        <div class="data-box">
+            <h2>Humidity (%)</h2>
+            <p id="humidity">Loading...</p>
+        </div>
+        <div class="data-box">
+            <h2>Carbon Monoxide (CO) PPM</h2>
+            <p id="co">Loading...</p>
+        </div>
+        <div class="data-box">
+            <h2>Air Quality Index (AQI)</h2>
+            <p id="aqi">Loading...</p>
+        </div>
+        <div class="data-box">
+            <h2>Nitrogen Oxides (NOx) PPM</h2>
+            <p id="nox">Loading...</p>
+        </div>
     </div>
-    <div class="data-box">
-        <h2>Humidity</h2>
-        <p id="humidity">Loading...</p>
+    
+    <div class="chart-container">
+        <canvas id="data-chart"></canvas>
     </div>
-    <div class="data-box">
-        <h2>Gas PPM</h2>
-        <p id="gas">Loading...</p>
-    </div>
-
-    <script>
-        const channelID = "2797593"; // Replace with your ThingSpeak Channel ID
-        const readAPIKey = "Your Read API Key"; // Replace with your Read API Key
-        const url = `https://api.thingspeak.com/channels/${channelID}/feeds.json?api_key=${readAPIKey}&results=1`;
-
-        async function fetchData() {
-            try {
-                const response = await fetch(url);
-                const data = await response.json();
-                const feeds = data.feeds[0];
-
-                // Update HTML with the latest data
-                document.getElementById("temperature").textContent = `${feeds.field1} °C`;
-                document.getElementById("humidity").textContent = `${feeds.field2} %`;
-                document.getElementById("gas").textContent = `${feeds.field3} PPM`;
-            } catch (error) {
-                console.error("Error fetching data:", error);
-            }
-        }
-
-        setInterval(fetchData, 20000); // Fetch data every 20 seconds
-        fetchData(); // Initial fetch
-    </script>
+    
+    <button id="download-btn">Download Data (CSV)</button>
+    
+    <script src="script.js"></script>
 </body>
 </html>
