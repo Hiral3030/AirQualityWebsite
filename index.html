@@ -9,40 +9,41 @@
 </head>
 <body>
     <header>
-        <h1>Air Quality Monitoring System</h1>
+        <h1>🌍 Air Quality Monitoring System</h1>
     </header>
     
     <main>
         <div class="data-container">
-            <div class="data-box">
-                <h2>Temperature (°C)</h2>
+            <div class="data-box temperature">
+                <h2>🌡️ Temperature (°C)</h2>
                 <p id="temperature">Loading...</p>
             </div>
-            <div class="data-box">
-                <h2>Humidity (%)</h2>
+            <div class="data-box humidity">
+                <h2>💧 Humidity (%)</h2>
                 <p id="humidity">Loading...</p>
             </div>
-            <div class="data-box">
-                <h2>Carbon Monoxide (CO) PPM</h2>
+            <div class="data-box co">
+                <h2>☠️ Carbon Monoxide (CO) PPM</h2>
                 <p id="co">Loading...</p>
             </div>
-            <div class="data-box">
-                <h2>Air Quality Index (AQI)</h2>
+            <div class="data-box aqi">
+                <h2>📊 Air Quality Index (AQI)</h2>
                 <p id="aqi">Loading...</p>
             </div>
-            <div class="data-box">
-                <h2>Nitrogen Oxides (NOx) PPM</h2>
+            <div class="data-box nox">
+                <h2>🚗 Nitrogen Oxides (NOx) PPM</h2>
                 <p id="nox">Loading...</p>
             </div>
         </div>
         
         <div class="chart-container">
+            <h2>📈 Data Trends</h2>
             <canvas id="data-chart"></canvas>
         </div>
     </main>
     
     <footer>
-        <button id="download-btn">Download Data (CSV)</button>
+        <button id="download-btn">📥 Download Data (CSV)</button>
     </footer>
     
     <script src="script.js"></script>
